@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val sList:List<Sensor> = sensorManager.getSensorList(Sensor.TYPE_ALL)
         //個々のSensorオブジェクトを取得⇒いタイプ、名前、ベンダーを一行ごとに保存
         for (sensor : Sensor in sList){
-            buffer.append("{${sensor.type},${sensor.name},${sensor.vendor}\n")
+            buffer.append("{${sensor.stringType},${sensor.name},${sensor.vendor}\n")
         }
         //txt01に保存したセンサーの情報を表示
         txt01.text = buffer.toString()
